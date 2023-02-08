@@ -38,6 +38,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Treasure Kabareebe](https://trekab.io/)
-- Frontend Mentor - [@trekab](https://www.frontendmentor.io/profile/trekab)
-- LinkedIn - [Treasure Kabareebe](https://www.linkedin.com/in/treasure-kabareebe/)
+- Website - [portfolio](https://luis-colina-portfolio.netlify.app/)
+- Frontend Mentor - [@silkiercomet](https://www.frontendmentor.io/profile/silkiercomet)
+- LinkedIn - [Luis Colina](https://www.linkedin.com/in/luis-colina-466152155/)
