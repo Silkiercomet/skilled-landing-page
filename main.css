@@ -8,6 +8,7 @@
   --main-pink: #ffa7c3;
   --primary-gradient: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
   --secondary-gradient: linear-gradient(180deg, #4851ff 0%, #f02aa6 99.92%);
+  --shadow-color: 
 }
 /*
   1. Use a more-intuitive box-sizing model.
@@ -54,8 +55,12 @@ p, h1, h2, h3, h4, h5, h6 {
 .wrapper{
   display: flex;
   flex-direction: column;
-  margin: 20px 15px 40px ;
   background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+  padding-block:15px;
+
+}
+.wrapper > *{
+  margin-inline: 15px;
 }
 
 /* navbar */
@@ -70,18 +75,25 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 .header a{
+  position: relative;
+  z-index: 99;
   padding: 15px 30px;
   background-color: var(--blue);
   border-radius: 30px;
   text-decoration: none;
   color: #f0f1ff;
   font-weight: 800;
+  transition: 300ms ease-in-out;
+}
+.header a:hover{
+  background-color: var(--main-orange);
 }
 /* navbar */
 
 /* hero */
 .hero{
   margin-block: 60px;
+  position: relative;
 }
 .hero__header{
   font-size: 40px;
@@ -101,6 +113,10 @@ p, h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   border-radius: 30px;
   color: white;
+  transition: 300ms ease-in-out;
+}
+.hero__header + p + a:hover{
+  background: linear-gradient(120deg, #ff6f48 0.04%, #f02aa6 100%);
 
 }
 .hero__figure{
@@ -114,20 +130,166 @@ p, h1, h2, h3, h4, h5, h6 {
 /* grid */
 .grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+  row-gap: 50px;
+  column-gap: 15px;
 
   list-style: none;
   padding-left: 0;
+  margin-block: 50px;
 }
 .grid__header{
-  padding: 20px 30px;
+  padding: 60px 30px;
 
 
-  font-size: 25px;
+  font-size: 23px;
   color: #f0f1ff;
   border-radius: 15px;
 
   background: var(--primary-gradient);
 }
+
+/* grid element */
+
+.grid__element{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 20px 30px;
+  position: relative;
+
+  background-color: #fff;
+  box-shadow:
+  0.3px 0.5px 0.7px hsl(var(--blue) / 0.29),
+  0.9px 1.8px 2.4px -0.7px hsl(var(--blue) / 0.32),
+  2.1px 4.3px 5.7px -1.3px hsl(var(--blue) / 0.36),
+  5px 10px 13.4px -2px hsl(var(--blue) / 0.4);
+  border-radius: 10px;
+}
+.grid__element_icon{
+  position: absolute;
+  top: -30px;
+  left: 20px;
+}
+.grid__element header {
+  margin-top: 50px;
+  
+  font-weight: 800;
+  font-size: 25px;
+  color: var(--blue);
+}
+.grid__element p {
+  color: var(--text-gray);
+  padding-right: 45px;
+  font-size: 18px;
+}
+.grid__element a {
+  text-decoration: none;
+  color: var(--main-orange);
+  font-weight: 700;
+}
+
+/* grid element */
+
+
 /* grid */
+
+/* footer */
+
+footer{
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 30px;
+}
+
+footer > a {
+  padding: 12px 30px;
+  background: var(--secondary-gradient);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  color: white;
+}
+footer > a:hover{
+  background: linear-gradient(120deg, #4851ff 0%, #f02aa6 99.92%)
+}
+
+/* footer */
+
+/* media */
+
+@media screen and (min-width:700px) {
+
+
+  .hero__figure{
+    height: 690px;
+    width: 690px;
+    background-image: url(assets/image-hero-tablet.png);
+  }
+  .hero{
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+  }
+  .hero > * {
+    flex: 1;
+
+  }
+}
+@media screen and (min-width:1200px) {
+  body{
+    background-color: #d4d4d8;
+  }
+  .wrapper, footer{
+    max-width: 1600px;
+    margin-inline: auto;
+    overflow: hidden;
+
+  }
+
+
+  .wrapper > *{
+    margin-inline: 80px;
+
+  }
+  footer{
+    padding-inline:80px
+  }
+  .hero__figure{
+    height: 890px;
+    width: 990px;
+    background-image: url(assets/image-hero-desktop.png);
+    background-position: left top;
+    margin-top: -160px;
+  }
+  .hero__header{
+    font-size: 60px;
+  }
+  .hero{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 0;
+
+  }
+  .hero > * {
+    flex: 1;
+
+  }
+  .grid{
+    grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+
+
+  }
+  
+}
+@media screen and (min-width:1600px) {
+  .header{
+    padding-top: 35px;
+  }
+}
+
+/* media */
 
